@@ -5,6 +5,7 @@ import Formacion from './pages/Formacion';
 import SobreNosotros from './pages/SobreNosotros';
 import Contacto from './pages/Contacto';
 import Acceder from './pages/Acceder';
+import Empleo from "./pages/Empleo";
 function App() {
   return (
     <Router>
@@ -16,6 +17,9 @@ function App() {
         <Route path="/formacion">
           <Formacion/>
         </Route>
+        <Route path="/empleo">
+          <Empleo/>
+        </Route>
         <Route path="/sobrenosotros">
           <SobreNosotros/>
         </Route>
@@ -25,6 +29,7 @@ function App() {
         <Route path="/acceder">
           <Acceder/>
         </Route>
+        {/* Si no se encuentra la ruta especificada redirige a la pagina de inicio */}
         <Redirect to="/inicio"/>
       </Switch> 
     </Router>
