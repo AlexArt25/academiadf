@@ -12,16 +12,18 @@ const MenuHeader = () => {
                     <a href="/formacion">Formación</a>
                     <a href="/empleo">Empleo</a>
                     <div className="sobreNosotrosDropDown">
-                        <button className="sobreNosotros">
+                        <a href="/sobrenosotros" className="sobreNosotros">
                             Sobre Nosotros
-                        </button>
+                        </a>
                         <div class="dropdown">
-                        <a href="/contacto">Contacto</a>
+                            <div>
+                                <a href="/contacto">Contacto</a>
+                            </div>
                         </div>
                     </div>
                     <a href="/acceder">Acceder</a>
                 </nav>
-            </div>    
+            </div>   
         </div>
     )
 }
