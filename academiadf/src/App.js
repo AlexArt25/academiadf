@@ -1,11 +1,12 @@
 import './App.css';
-import {BrowserRouter as Router, Switch, Route, Link, Redirect} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
 import Inicio from './pages/Inicio';
 import Formacion from './pages/Formacion';
 import SobreNosotros from './pages/SobreNosotros';
 import Contacto from './pages/Contacto';
 import Acceder from './pages/Acceder';
 import Empleo from "./pages/Empleo";
+import InformacionCurso from './pages/InformacionCurso';
 function App() {
   return (
     <Router>
@@ -13,6 +14,9 @@ function App() {
       <Switch>
         <Route path="/inicio">
           <Inicio/>
+        </Route>
+        <Route path="/informacionCurso">
+          <InformacionCurso/>
         </Route>
         <Route path="/formacion">
           <Formacion/>

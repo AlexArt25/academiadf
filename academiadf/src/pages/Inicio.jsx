@@ -1,7 +1,16 @@
 import React from 'react'
 import "./Inicio.css";
 import MenuHeader from '../components/MenuHeader';
+import { FaMapMarkedAlt } from "react-icons/fa";
+import { FaClock } from 'react-icons/fa';
+import { FaCalendarAlt } from 'react-icons/fa';
+import { FaFlag } from 'react-icons/fa';
+import { useHistory } from 'react-router-dom';
+// import InformacionCurso from './InformacionCurso';
 const Inicio = () => {
+    // Localizacion actual
+    let history = useHistory();
+    // Array de los cursos
     const arrayCursos = [
         {
             imagenCurso:"https://adfdatos.blob.core.windows.net/adf-img-cursos/20-35003013-docencia-de-la-formacion-profesional-para-el-empleo.png",
@@ -33,6 +42,7 @@ const Inicio = () => {
             destinatarios:"SCE DESEMPLEADOS/AS",
             familiaProfesional:"INFORMÁTICA, WEB Y PROGRAMACIÓN",
             descripcion:"SQL es uno de los lenguajes más importantes que se debe aprender en programación, ha sido diseñado para administrar y recuperar información de sistemas de gestión de Bases de Datos. Podrás adquirir los conocimientos necesarios para la gestión de Base de Datos SQL",
+            direccion:"Telde - Las Huesas",
             horasLectivas:"90h",
             fInicio:"18/10/2021",
             fFinal:"11/11/2021",
@@ -51,15 +61,20 @@ const Inicio = () => {
             estadoMatricula:"Cerrado"
         }
     ];
+    const meInteresa = (curso) =>{
+        const cursoInteres = curso;
+        history.push({pathname:"/informacionCurso", state:{curso:{cursoInteres}}});
+        // console.log("Hola");
+    };
     return (
         <div className="divInicio">
             <MenuHeader/>
             <main className="main">
                 {arrayCursos.map(curso=>{
                     return(
-                        <div className="tarjetaCurso">
+                        <div className="tarjetaCurso" key={curso.nombre}>
                             <div className="imagenCurso">
-                                <img src={curso.imagenCurso}></img>
+                                <img src={curso.imagenCurso} alt="Logo del Curso"></img>
                             </div>
                             <div className="cuerpoTarjetaCurso">
                                 <div className="descripcionCurso">
@@ -68,13 +83,14 @@ const Inicio = () => {
                                     <p>{curso.descripcion}</p>
                                 </div>
                                 <div className="datosCurso">
-                                    <p>{curso.direccion}</p>
-                                    <p>{curso.horasLectivas}</p>
-                                    <p>{curso.fInicio}</p>
-                                    <p>{curso.fFinal}</p>
+                                    <p><FaMapMarkedAlt className="reactIcons"/>{curso.direccion}</p>
+                                    <p><FaClock className="reactIcons"/>{curso.horasLectivas}</p>
+                                    <p><FaCalendarAlt className="reactIcons"/>{curso.fInicio}</p>
+                                    <p><FaCalendarAlt className="reactIcons"/>{curso.fFinal}</p>
+                                    <p><FaFlag className="reactIcons"/>{curso.estadoMatricula}</p>
                                 </div>
                                 <div className="botonMasInfo">
-                                    <button>Me Interesa</button>
+                                    <button onClick={()=>{meInteresa(curso)}}>Me Interesa</button>
                                 </div>
                             </div>
                         </div>
