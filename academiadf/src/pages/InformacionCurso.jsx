@@ -33,7 +33,14 @@ const InformacionCurso = (props) => {
                         <p>{cursoInteres.fFinal}</p>
                         <p>{cursoInteres.destinatarios}</p>
                         <p>{cursoInteres.horasLectivas}</p>
-                        <p>{cursoInteres.descripcion}</p>
+                        <p className="descripcionCurso">{cursoInteres.descripcion}</p>
+                        </div>
+                    </div>
+                    <div className="botonesInfo">
+                        <div className="separacionHeader"></div>
+                        <div className="botones">
+                            <button>Preinscribirme</button>
+                            <button>Más Información</button>
                         </div>
                     </div>
                </div>
