@@ -36,21 +36,28 @@
     flex-direction: row;
 }
 .headerTabla{
-    height: 20%;
+    height: 100%;
     width: 30%;
     background-color: #9DDEE7;
-}
-.headerTabla p{
     font-size: 2.1rem;
     font-weight: bold;
     text-align: center;
     margin: 3% 0%;
     padding-bottom: 1%;
     color: #417FB8;
+    border-bottom: 0.02rem black solid;
 }
+ tbody>.headerTabla:first-child{
+    background-color: rebeccapurple;
+}
+.headerTabla:last-child:before{
+    background-color: red;
+}
+
 .cuerpoTabla{
     height: 100%;
     width: 70%;
+    border-bottom: 0.02rem solid rgb(196, 195, 195);
 }
 .cuerpoTabla p{
     font-size: 1rem;

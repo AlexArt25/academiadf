@@ -14,7 +14,7 @@ const InformacionCurso = (props) => {
             <main className="main">
                <div className="tablaInformacionCurso">
                    <h1>{cursoInteres.nombre}</h1>
-                    <div className="tablaInfo">
+                    {/* <div className="tablaInfo">
                         <div className="headerTabla">
                             <p>Área</p>
                             <p>Centro</p>
@@ -35,7 +35,46 @@ const InformacionCurso = (props) => {
                         <p>{cursoInteres.horasLectivas}</p>
                         <p className="descripcionCurso">{cursoInteres.descripcion}</p>
                         </div>
-                    </div>
+                    </div> */}
+                    <table className="tablaInfo">
+                        <tbody>
+                            <tr>
+                                <th scope="row" className="headerTabla">Área</th> 
+                                <td className="cuerpoTabla">
+                                    <p>{cursoInteres.familiaProfesional}</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" className="headerTabla">Centro</th>
+                                <td className="cuerpoTabla"><p>{cursoInteres.direccion}</p></td>
+                            </tr>
+                            <tr>
+                                    <th scope="row" className="headerTabla">Nombre del Curso</th>
+                                <td className="cuerpoTabla"><p>{cursoInteres.nombre}</p></td>
+                            </tr>
+                            <tr>
+                                    <th scope="row" className="headerTabla">Fecha de Inicio</th>
+                                    <td className="cuerpoTabla"><p>{cursoInteres.fInicio}</p></td>
+                            </tr>
+                            <tr>
+                                    <th scope="row" className="headerTabla">Fecha de Fin</th>
+                                    <td className="cuerpoTabla"><p>{cursoInteres.fFinal}</p></td>
+                            </tr>
+                            <tr>
+
+                                    <th scope="row" className="headerTabla">Tipo de Curso</th>
+                                    <td className="cuerpoTabla"><p>{cursoInteres.destinatarios}</p></td>
+                            </tr>
+                            <tr>
+                                    <th scope="row" className="headerTabla">Horas</th>
+                                    <td className="cuerpoTabla"><p>{cursoInteres.horasLectivas}</p></td>
+                            </tr>
+                            <tr>
+                                    <th scope="row" className="headerTabla">Presentacion</th>
+                                    <td className="cuerpoTabla"><p className="descripcionCurso">{cursoInteres.descripcion}</p></td>
+                            </tr>       
+                       </tbody> 
+                    </table>
                     <div className="botonesInfo">
                         <div className="separacionHeader"></div>
                         <div className="botones">
