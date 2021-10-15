@@ -14,28 +14,6 @@ const InformacionCurso = (props) => {
             <main className="main">
                <div className="tablaInformacionCurso">
                    <h1>{cursoInteres.nombre}</h1>
-                    {/* <div className="tablaInfo">
-                        <div className="headerTabla">
-                            <p>Área</p>
-                            <p>Centro</p>
-                            <p>Nombre del Curso</p>
-                            <p>Fecha de Inicio</p>
-                            <p>Fecha de Fin</p>
-                            <p>Tipo de Curso</p>
-                            <p>Horas</p>
-                            <p>Presentacion</p>
-                        </div>
-                        <div className="cuerpoTabla">
-                        <p>{cursoInteres.familiaProfesional}</p>
-                        <p>{cursoInteres.direccion}</p>
-                        <p>{cursoInteres.nombre}</p>
-                        <p>{cursoInteres.fInicio}</p>
-                        <p>{cursoInteres.fFinal}</p>
-                        <p>{cursoInteres.destinatarios}</p>
-                        <p>{cursoInteres.horasLectivas}</p>
-                        <p className="descripcionCurso">{cursoInteres.descripcion}</p>
-                        </div>
-                    </div> */}
                     <table className="tablaInfo">
                         <tbody>
                             <tr>
