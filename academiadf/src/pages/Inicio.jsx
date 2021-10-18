@@ -63,8 +63,9 @@ const Inicio = () => {
     ];
     const meInteresa = (curso) =>{
         const cursoInteres = curso;
+        // mandamos el curso solicitado como objeto a la pagina de informacion del curso
+
         history.push({pathname:"/informacionCurso", state:{curso:{cursoInteres}}});
-        // console.log("Hola");
     };
     return (
         <div className="divInicio">
@@ -72,11 +73,11 @@ const Inicio = () => {
             <main className="main">
                 {arrayCursos.map(curso=>{
                     return(
-                        <div className="tarjetaCurso col-12" key={curso.nombre}>
-                            <div className="imagenCurso col-12 col-md-3">
+                        <div className="tarjetaCurso col-10" key={curso.nombre}>
+                            <div className="imagenCurso col-12 col-lg-3">
                                 <img src={curso.imagenCurso} alt="Logo del Curso"></img>
                             </div>
-                            <div className="cuerpoTarjetaCurso col-12 col-md-9">
+                            <div className="cuerpoTarjetaCurso col-12 col-lg-9">
                                 <div className="descripcionCurso">
                                     <h2 className="nombreCurso">{curso.nombre}</h2>
                                     <h4 className="subtituloCurso">{curso.destinatarios}/{curso.familiaProfesional}</h4>

@@ -68,8 +68,8 @@ return (
                 </tbody>
             </table>
             <div className="botonesInfo">
-                <div className="separacionHeader"></div>
-                <div className="botones">
+                <div className="separacionHeader col-5 col-sm-3"></div>
+                <div className="botones col-7 col-sm-9">
                     <button onClick={()=>{}}>Preinscribirme</button>
                     <button onClick={()=>{}}>Más Información</button>
                 </div>
