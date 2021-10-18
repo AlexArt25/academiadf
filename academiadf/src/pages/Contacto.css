@@ -3,5 +3,77 @@
     width: 100%;
     background: rgb(124,184,231);
     background: linear-gradient(90deg, rgba(124,184,231,1) 0%, rgba(30,88,155,0.98) 100%);
-    /* backdrop-filter: blur(20px); */
+}
+
+.main{
+    height: 75vh;
+    width: 98%;
+    background-color: white;
+    border-radius: 0.5rem;
+    padding:1%;
+   overflow: hidden;
+   overflow-y: scroll;
+}
+
+.tarjetasContacto{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.tarjetaDireccion{
+    height:100%;
+    width: 30%;
+    margin: 0 auto;
+    margin-bottom: 2%;
+    border-radius: 1rem;
+    border: 2px solid #4987C3;
+    box-shadow: 0.25rem 0.23rem 0.7rem rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+.imagenTarjeta1, .imagenTarjeta2, .imagenTarjeta3{
+    height: 20%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin: 3% 0%;
+}
+.imagenTarjeta1{
+    background-image: url("../img/adf.png");
+}
+.imagenTarjeta2{
+    background-image: url("../img/cife.png");
+}
+.imagenTarjeta3{
+    background-image: url("../img/formavanza.png");
+}
+
+.tarjetaDireccion h4{
+    text-align: center;
+}
+.direccion{
+    height: 30%;
+    width:70%;
+    background-color: gray;
+    margin: 0 auto;
+}
+.tarjetaInfo{
+    height: 30%;
+    width: 100%;
+    margin-top: 2%;
+    text-align: center;
+}
+.tarjetaInfo p{
+    color: #4987C3;
+}
+.tarjetaInfo span{
+    color: black;
+    font-weight: bolder;
+    font-style: italic;
+    margin-right: 1%;
 }
