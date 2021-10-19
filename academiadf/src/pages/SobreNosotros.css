@@ -70,3 +70,27 @@ h2{
 .sobreNosotros a:visited{
     color: #6bade2;
 }
+
+/* Media Queries para las diferentes pantallas de los dispositivos */
+@media only screen and (max-width:576px){
+    .sobreNosotrosImg{
+        height: 30%;
+    }
+}
+
+@media only screen and (min-width:576px) and (max-width:762px){
+    .sobreNosotrosImg{
+        height: 40%;
+        width: 100%;
+        background-size: cover;
+    }
+}
+
+@media only screen and (min-width:762px) and (max-width:992px){
+    .sobreNosotrosImg{
+        height: 40%;
+        width: 100%;
+        background-size: contain;
+    }
+}
+

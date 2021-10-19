@@ -7,7 +7,7 @@ const SobreNosotros = () => {
             <MenuHeader/>
             <main className="main">
                 <h1>Sobre Nosotros</h1>
-                <div className="sobreNosotrosImg col-sm-6">
+                <div className="sobreNosotrosImg col-sm-10">
                 </div>
                 <div className="sobreNosotros">
                     <p>
