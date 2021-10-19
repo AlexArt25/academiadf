@@ -131,6 +131,7 @@
 }
 
 .formContacto .form-textarea {
+    height: 10rem;
     font-weight: bolder;
     font-style: italic;
     display: flex;
@@ -141,6 +142,8 @@
 }
 
 .formContacto .form-textarea textarea{
+    height: 100%;
+    width: 100%;
     border: 0.03rem solid #4987C3;
     border-radius: 1rem;
     box-shadow: inset -0.1rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
@@ -181,3 +184,153 @@
     letter-spacing: 0.04rem;
     border-radius: 0.2rem;
 }
+
+/* Media Queries para las diferentes pantallas de los dispositivos */
+
+@media only screen and (max-width:576px){
+    p{
+        text-align: justify;
+        padding: 1rem 1.5rem;
+    }
+    .tarjetaDireccion{
+        margin: 5% auto;
+    }
+
+    .tarjetaInfo p{
+        text-align: center;
+    }
+
+    .formularioContacto input,select{
+        width: 50%;
+        margin: 2% 0%;
+        display: flex;
+        justify-content:flex-end;
+    }
+
+    .formContacto .form-check input[type=checkbox]{
+        width: 15%;
+        transform: scale(1.4);
+        margin-left: 2rem;
+        padding: 0% 0% !important;
+    }
+    .formularioContacto input[id=email]{
+        margin-left: 3rem;
+    }
+    .formContacto .form-check p{
+        text-align: center;
+        padding: auto;
+    }
+
+    .formContacto button{
+        height: 20%;
+        width: 90%;
+        margin: 5% auto;
+
+    }
+   
+}
+
+@media only screen and (min-width:576px) and (max-width:762px){
+    p{
+        text-align: justify;
+        padding: 1rem 1.5rem;
+    }
+    .tarjetaDireccion{
+        margin: 5% auto;
+    }
+
+    .tarjetaInfo p{
+        text-align: center;
+    }
+
+    .formularioContacto input,select{
+        width: 50%;
+        margin: 1.5% 0%;
+        display: flex;
+        justify-content:flex-end;
+    }
+
+    .formularioContacto input[id=email]{
+        margin-left: 3rem;
+    }
+     
+    .formContacto .form-check input[type=checkbox]{
+        width: 15%;
+        transform: scale(1.4);
+        margin-right: 0rem;
+        padding: 0% 0% !important;
+    }
+    .formContacto .form-check p{
+        text-align: center;
+        padding: auto;
+    }
+
+    .formContacto button{
+        height: 20%;
+        width: 90%;
+        margin: 5% auto;
+
+    }
+   
+}
+
+@media only screen and (min-width:762px) and (max-width:992px){
+    p{
+        text-align: justify;
+        padding: 1rem 1.5rem;
+    }
+    .tarjetaDireccion{
+        margin: 5% auto;
+    }
+
+    .tarjetaInfo p{
+        text-align: center;
+    }
+    .tarjetaInfo span{
+        width: 100%;
+    }
+
+    .tarjetasContacto p{
+        font-size: 0.8rem;
+        text-align: center;
+        padding: 0% 0%;
+    }
+
+    .formularioContacto input,select{
+        width: 50%;
+        margin: 1.5% 0%;
+        display: flex;
+        justify-content:flex-end;
+    }
+
+    .formularioContacto input[id=email]{
+        margin-left: 3rem;
+    }
+     
+    .formContacto .form-check input[type=checkbox]{
+        width: 15%;
+        transform: scale(1.4);
+        margin-right: 0rem;
+        padding: 0% 0% !important;
+    }
+    .formContacto .form-check p{
+        text-align: center;
+        padding: auto;
+    }
+
+    .formContacto button{
+        height: 20%;
+        width: 90%;
+        margin: 5% auto;
+
+    }
+   
+}
+
+@media only screen and (min-width:992px){
+    .tarjetaDireccion p{
+        font-size: 0.8rem ;
+    }
+}
+
+

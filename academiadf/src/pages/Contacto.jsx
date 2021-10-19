@@ -72,7 +72,7 @@ const Contacto = () => {
                 <h1>Contacto</h1>
                 <p>En GRUPO ADF estamos para ayudarte en lo que necesites. Puedes ponerte en contacto con nosotros o acercarte por nuestras oficinas situadas en las siguientes direcciones:</p>
                 <div className="tarjetasContacto">
-                    <div className="tarjetaDireccion col-12 col-lg-3">
+                    <div className="tarjetaDireccion col-10 col-lg-3">
                         <div className="imagenTarjeta1"></div>
                         <h4>ADF Gáldar</h4>
                         <div className="direccion">
@@ -84,7 +84,7 @@ const Contacto = () => {
                             <p><span>Email:</span>galdar@academiadf.com</p>
                         </div>
                     </div>
-                    <div className="tarjetaDireccion col-12  col-lg-3">
+                    <div className="tarjetaDireccion col-10  col-lg-3">
                         <div className="imagenTarjeta2"></div>
                         <h4>CIFE Telde - Las Huesas</h4>
                         <div className="direccion">
@@ -97,7 +97,7 @@ const Contacto = () => {
                             <p><span>Email:</span>telde@academiadf.com</p>  
                         </div>
                     </div>
-                    <div className="tarjetaDireccion  col-12 col-lg-3">
+                    <div className="tarjetaDireccion  col-10 col-lg-3">
                         <div className="imagenTarjeta3"></div>
                         <h4>Formavanza Tamaraceite</h4>
                         <div className="direccion">
@@ -110,21 +110,21 @@ const Contacto = () => {
                         </div>
                     </div>
                 </div>
-                <div className="formularioContacto">
+                <div className="formularioContacto col-10 col-sm-10 col-md-10">
                     <form action="" onSubmit={submit} className="formContacto">
-                        <div className="form-group col-md-12 col-lg-6">
+                        <div className="form-group col-12 col-md-12 col-lg-6">
                         <label htmlFor="nombre">Nombre</label>
                         <input type="text" name="nombre" id="nombre" value={nombre} onChange={gestorNombre}/>
                         </div>
-                        <div className="form-group col-md-12 col-lg-6">
+                        <div className="form-group col-12  col-md-12 col-lg-6">
                         <label htmlFor="email">Email</label>
                         <input type="email" name="email" id="email" value={email} onChange={gestorEmail}/>
                         </div>
-                        <div className="form-group col-md-12 col-lg-6">
+                        <div className="form-group col-12 col-md-12 col-lg-6">
                         <label htmlFor="telefono">Telefono</label>
                         <input type="tel" name="telefono" id="telefono" maxLength="9" value={telefono} onChange={gestorTelefono}/>
                         </div>
-                        <div className="form-group col-md-12 col-lg-6">
+                        <div className="form-group col-12 col-md-12 col-lg-6">
                         <label htmlFor="centroFormacion">Centro</label>
                             <select name="centroFormacion" id="centroFormacion" value={centro} onChange={gestorCentro}>
                                 <option value=""> CIFE Telde - Las Huesas</option>
@@ -132,9 +132,9 @@ const Contacto = () => {
                                 <option value="">Formavanza Tamaraceite</option>
                             </select>
                         </div>
-                        <div className="form-textarea col-12">
+                        <div className="form-textarea col-10">
                         <label htmlFor="mensaje">Mensaje</label>
-                        <textarea name="mensaje" id="" cols="30" rows="10" value={mensaje} onChange={gestorMensaje}>
+                        <textarea name="mensaje" id="mensaje" value={mensaje} onChange={gestorMensaje}>
 
                         </textarea>
                         </div>
