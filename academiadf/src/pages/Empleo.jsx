@@ -7,7 +7,64 @@ import img3 from "../img/carousel/4.jpg"
 import img4 from "../img/carousel/5.jpg"
 import { Carousel } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 const Empleo = () => {
+  const [nombre,setNombre] = useState("");
+  const [email,setEmail] = useState("");
+  const [telefono,setTelefono] = useState("");
+  const [mensaje,setMensaje] = useState("");
+  const [condicionesLegales,setCondicionesLegales] = useState(false);
+  const [errores,setErrores] = useState("");
+  const gestorNombre = (e)=>{
+    setNombre(e.target.value);
+  };
+
+  const gestorEmail = (e)=>{
+      setEmail(e.target.value);
+  };
+
+  const gestorTelefono = (e)=>{
+      setTelefono(e.target.value);
+  };
+
+  const gestorMensaje = (e)=>{
+    setMensaje(e.target.value);
+  }
+
+  const gestorCondicionesLegales = (e) =>{
+    if(condicionesLegales !== true){
+        setCondicionesLegales(true);
+    }else{
+        setCondicionesLegales(false);
+    }
+  }
+
+  const submit = (e) =>{
+    e.preventDefault();
+    if(nombre === "" || !isNaN(nombre)){
+        setErrores("Escriba un nombre válido");
+    }
+    if(email ===""){
+        setErrores("Escriba un email válido");
+    }
+    if(telefono.length <9 || isNaN(telefono)|| telefono===""){
+        setErrores("Escriba un numnero de telefono valido");
+    }
+    if(mensaje === ""){
+        setErrores("Debe escribir un mensaje");
+    }
+   if(errores===""){
+     console.log(nombre + " " +email+ " " +telefono+ " " +mensaje+ " " +condicionesLegales);
+   }else{
+     console.log(errores);
+   }
+    setNombre("");
+    setEmail("");
+    setTelefono("");
+    setMensaje("");
+    setCondicionesLegales(false);
+}
+
 return (
 <div className="divEmpleo">
     <MenuHeader/>
@@ -76,19 +133,19 @@ return (
           </div>
           <div className="tarjetaFormulario col-10 col-md-5">
             <h4>Para cualquier consulta, contacta con nosotros:</h4>
-            <form action="">
+            <form action="" onSubmit={submit}>
               <label htmlFor="nombre">Nombre:</label>
-              <input type="text" name="nombre" id="nombre" />
+              <input type="text" name="nombre" id="nombre" value={nombre} onChange={gestorNombre}/>
               <label htmlFor="email">Email:</label>
-              <input type="email" name="email" id="email" />
+              <input type="email" name="email" id="email" value={email} onChange={gestorEmail}/>
               <label htmlFor="telefono">Telefono:</label>
-              <input type="tel" name="telefono" id="telefono" />
+              <input type="tel" name="telefono" id="telefono" maxLength="9" value={telefono} onChange={gestorTelefono}/>
               <label htmlFor="mensaje">Mensaje:</label>
-              <textarea name="mensaje" id="mensaje">
+              <textarea name="mensaje" id="mensaje" value={mensaje} onChange={gestorMensaje}>
 
               </textarea>
               <div className="form-check col-12">
-                        <input type="checkbox" name="condicionesLegales" id="condicionesLegales" />
+                        <input type="checkbox" name="condicionesLegales" id="condicionesLegales" onChange={gestorCondicionesLegales}/>
                         <p>He leido y acepto las <a href="https://www.academiadf.com/adfv2012/ADF_Politica.aspx">Condiciones Legales</a></p>
               </div>
               <button>Enviar</button>
