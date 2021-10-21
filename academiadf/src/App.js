@@ -7,6 +7,8 @@ import Contacto from './pages/Contacto';
 import Acceder from './pages/Acceder';
 import Empleo from "./pages/Empleo";
 import InformacionCurso from './pages/InformacionCurso';
+import Preinscripcion from './pages/Preinscripcion';
+import MasInformacion from './pages/MasInformacion';
 function App() {
   return (
     <Router>
@@ -32,6 +34,12 @@ function App() {
         </Route>
         <Route path="/acceder">
           <Acceder/>
+        </Route>
+        <Route path="/preinscripcion">
+          <Preinscripcion/>
+        </Route>
+        <Route path="/masinformacion">
+          <MasInformacion/>
         </Route>
         {/* Si no se encuentra la ruta especificada redirige a la pagina de inicio */}
         <Redirect to="/inicio"/>

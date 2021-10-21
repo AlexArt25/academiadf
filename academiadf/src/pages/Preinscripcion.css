@@ -1,0 +1,91 @@
+.divPreinscripcionCurso{
+    height: 100vh;
+    width: 100%;
+    background: rgb(124,184,231);
+    background: linear-gradient(90deg, rgba(124,184,231,1) 0%, rgba(30,88,155,0.98) 100%);
+}
+
+.main{
+    height: 75vh;
+    width: 98%;
+    background-color: white;
+    border-radius: 0.5rem;
+    padding:1%;
+   overflow: hidden;
+   overflow-y: scroll;
+}
+
+.formularioPreinscripcion{
+    height: auto;
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2%;
+    border-radius: 1rem;
+    border: 2px solid #4987C3;
+    box-shadow: 0.25rem 0.23rem 0.7rem rgba(0, 0, 0, 0.3);
+}
+
+.headerPreinscripcion{
+    height: 12%;
+    width: 100%;
+    background-color: #4987C3;
+}
+.headerPreinscripcion h3{
+    color: white;
+}
+.headerPreinscripcion:first-child{
+    border-radius: 1rem 1rem 0rem 0rem;
+    margin: 0% 0%;
+    padding: 0% 0%;
+}
+
+.datosPreinscripcion{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.form-group{
+    margin: 2% 0%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.datosPreinscripcion label{
+    width: 40%;
+   font-weight: bold;
+   font-style: italic;
+}
+
+.datosPreinscripcion input,select{
+    width: 40%;
+    background-color: #F4F4F5;
+    border: 0.03rem solid #4987C3;
+    border-radius: 1rem;
+    box-shadow: inset -0.1rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
+    margin-left: 2rem;
+    text-align: center;
+}
+
+.datosPreinscripcion input[type="checkbox"]{
+    box-shadow: none;
+   margin: auto;
+    transform: scale(1.6);
+    float: right !important;
+}
+
+.datosPreinscripcion p{
+    margin: auto;
+}
+
+.formularioPreinscripcion button{
+    height: 5%;
+    width: 30%;
+    margin: 2% auto;
+    border-radius: 0.5rem;
+}

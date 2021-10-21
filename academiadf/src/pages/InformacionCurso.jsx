@@ -1,13 +1,29 @@
 import React from 'react'
 import "./InformacionCurso.css"
-import { useLocation } from 'react-router';
+import { useLocation, useHistory } from 'react-router';
 import MenuHeader from '../components/MenuHeader';
 const InformacionCurso = (props) => {
+// Declaramos el history para pasar los datos a la siguiente pagina segun sea la eleccion del usuario
+const history = useHistory();
 // UseLocation para acceder a los parametros que le pasamos con el history.push desde el otro componente
 const location = useLocation();
 // Obtenemos los datos del curso
 const cursoInteres =location.state.curso.cursoInteres;
-console.log(typeof cursoInteres);
+
+// Funcion para Asociar la preinscripcion al curso solicitado
+const preincripcionCurso = (e)=>{
+    // Obtenemos el nombre del curso solicitado de la tabla de informacion del curso
+    const nombreCurso = e;
+    // Pasamos dicho nombre a la página de formulario de la preinscripcion
+    history.push({pathname:"/preinscripcion", state:{curso:{nombreCurso}}});
+    
+}
+const masInformacionCurso = (e)=>{
+     // Obtenemos el nombre del curso solicitado de la tabla de informacion del curso
+     const nombreCurso = e;
+     // Pasamos dicho nombre a la página de formulario de mas informacion de dicho curso
+     history.push({pathname:"/masinformacion", state:{curso:{nombreCurso}}});
+}
 return (
 <div className="divInformacionCurso">
     <MenuHeader />
@@ -70,8 +86,8 @@ return (
             <div className="botonesInfo">
                 <div className="separacionHeader col-5 col-sm-3"></div>
                 <div className="botones col-7 col-sm-9">
-                    <button onClick={()=>{}}>Preinscribirme</button>
-                    <button onClick={()=>{}}>Más Información</button>
+                    <button onClick={()=>{preincripcionCurso(cursoInteres.nombre);}}>Preinscribirme</button>
+                    <button onClick={()=>{masInformacionCurso(cursoInteres.nombre);}}>Más Información</button>
                 </div>
             </div>
         </div>
