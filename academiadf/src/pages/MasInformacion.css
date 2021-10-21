@@ -85,16 +85,31 @@
 .comentarioMasInformacion textarea{
     height: 7rem;
 }
-
-.datosMasInformacion input[type="checkbox"]{
-    box-shadow: none;
-   margin: auto;
-    transform: scale(1.6);
-    float: right !important;
+.condicionesLegales{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
 }
 
+.condicionesLegales .form-group{
+    width: 60%;
+}
+
+.datosMasInformacion input[type="checkbox"]{
+    width: auto;
+    box-shadow: none;
+    margin:auto 0;
+    margin-top: 2%;
+    vertical-align: middle;
+    transform: scale(1.6);
+}
+
+
 .datosMasInformacion p{
-    margin: auto;
+    margin: auto 0 !important;
 }
 
 .formularioMasInformacion button{
@@ -102,4 +117,48 @@
     width: 30%;
     margin: 2% auto;
     border-radius: 0.5rem;
+}
+.error{
+    color: red;
+}
+@media only screen and (max-width:572px){
+    .condicionesLegales{
+        width: 100%;
+    }
+    .condicionesLegales .form-group{
+        width: 80%;
+    }
+  
+    .condicionesLegales input[type="checkbox"]{
+        margin: auto;
+    }
+}
+@media only screen and (min-width:572px) and (max-width:762px){
+    .condicionesLegales{
+        width: 100%;
+    }
+    .condicionesLegales .form-group{
+        width: 60%;
+    }
+    .condicionesLegales p{
+        text-align: center;
+    }
+    .condicionesLegales input[type="checkbox"]{
+        margin: auto 0;
+    }
+}
+@media only screen and (min-width:762px) and (max-width:992px){
+    .condicionesLegales{
+        width: 100%;
+    }
+    .condicionesLegales .form-group{
+        width: 50%;
+    }
+    .condicionesLegales p{
+        text-align: left;
+    }
+
+    .condicionesLegales input[type="checkbox"]{
+        margin: auto 0;
+    }
 }
