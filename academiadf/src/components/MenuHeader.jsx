@@ -1,31 +1,30 @@
 import React from 'react'
 import "./MenuHeader.css";
+import {Navbar,Container,Nav,NavDropdown} from "react-bootstrap";
+import logo from "../img/GrupoADF-logo.png";
 const MenuHeader = () => {
-    // comentario
     return (
         <div className="divHeader">
-            <div className="divLogo">
-                <div className="logo"></div>  
+          <Navbar className="divNavbar" expand="md">
+            <Container className="navbar">
                
-            </div>
-            <div className="divNavbar">
-                <nav className="navbar">
-                    <a href="/incio">Inicio</a>
-                    <a href="/formacion">Formación</a>
-                    <a href="/empleo">Empleo</a>
-                    <div className="sobreNosotrosDropDown">
-                        <a href="/sobrenosotros" className="sobreNosotros">
-                            Sobre Nosotros
-                        </a>
-                        <div class="dropdown">
-                            <div>
-                                <a href="/contacto">Contacto</a>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="/acceder">Acceder</a>
-                </nav>
-            </div>   
+                <a className="divLogo" href="/inicio">
+                    <img src={logo} alt="Logo" />
+                </a>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="me-auto">
+                    <Nav.Link className="link" href="/inicio">Inicio</Nav.Link>
+                    <Nav.Link className="link" href="/formacion">Formacion</Nav.Link>
+                    <Nav.Link className="link" href="/empleo">Empleo</Nav.Link>
+                    <Nav.Link className="link" href="/formacion">Formacion</Nav.Link>
+                    <NavDropdown title="Sobre Nosotros" className="link" id="basic-nav-dropdown">
+                    {/* <NavDropdown.Item className="dropDownMenu" href="/Contacto">Contacto</NavDropdown.Item> */}
+                    </NavDropdown>
+                </Nav>
+                </Navbar.Collapse>
+            </Container>
+            </Navbar>
         </div>
     )
 }
