@@ -76,7 +76,7 @@ const Contacto = () => {
                         <div className="imagenTarjeta1"></div>
                         <h4>ADF Gáldar</h4>
                         <div className="direccion">
-                                    <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=ACADEMIA%20DE%20DESARROLLO%20FORMATIVO%20SL&t=k&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                                    <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=ACADEMIA%20DE%20DESARROLLO%20FORMATIVO%20SL&t=k&z=13&ie=UTF8&iwloc=&output=embed" title="Adf Gáldar"></iframe>
                         </div>
                         <div className="tarjetaInfo">
                             <p><span>Tfno:</span>928880986</p>
@@ -88,7 +88,7 @@ const Contacto = () => {
                         <div className="imagenTarjeta2"></div>
                         <h4>CIFE Telde - Las Huesas</h4>
                         <div className="direccion">
-                                <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=C%C3%ADrculo%20de%20Formaci%C3%B3n,%20Empleo%20e%20Innovaci%C3%B3n&t=k&z=13&ie=UTF8&iwloc=&output=embed">
+                                <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=C%C3%ADrculo%20de%20Formaci%C3%B3n,%20Empleo%20e%20Innovaci%C3%B3n&t=k&z=13&ie=UTF8&iwloc=&output=embed" title="CIFP Telde - Las Huesas">
                                 </iframe>
                         </div>
                         <div className="tarjetaInfo">
@@ -101,7 +101,7 @@ const Contacto = () => {
                         <div className="imagenTarjeta3"></div>
                         <h4>Formavanza Tamaraceite</h4>
                         <div className="direccion">
-                                    <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=Formavanza&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                                    <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=Formavanza&t=&z=13&ie=UTF8&iwloc=&output=embed" title="Formavanza Tamaraceite"></iframe>
                         </div>
                         <div className="tarjetaInfo">
                             <p><span>Tfno:</span>928170744</p>
