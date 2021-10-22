@@ -29,20 +29,20 @@ const Preinscripcion = () => {
 
     // Manejo de errores
 
-    const [errorNombre,setErrorNombre] = useState("");
-    const [errorPrimerApellido,setErrorPrimerApellido] = useState("");
-    const [errorSegundoApellido,setErrorSegundoApellido] = useState("");
-    const [errorFechaNacimiento,setErrorFechaNacimiento] = useState("");
-    const [errorPais,setErrorPais] = useState("");
-    const [errorProvincia,setErrorProvincia] = useState("");
-    const [errorMunicipio,setErrorMunicipio] = useState("");
-    const [errorDni,setErrorDni] = useState("");
-    const [errorTelefono,setErrorTelefono] = useState("");
-    const [errorEmail,setErrorEmail] = useState("");
-    const [errorNivelAcademico,setErrorNivelAcademico] = useState("");
-    const [errorEspecialidad,setErrorEspecialidad] = useState("");
-    const [errorSituacionLaboral,setErrorSituacionLaboral] = useState("");
-    const [errorCondicionesLegales,setErrorCondicionesLegales] = useState(false);
+    let errorNombre = "";
+    let errorPrimerApellido = "";
+    let errorSegundoApellido = "";
+    let errorFechaNacimiento = "";
+    let errorPais = "";
+    let errorProvincia = "";
+    let errorMunicipio = "";
+    let errorDni = "";
+    let errorTelefono = "";
+    let errorEmail = "";
+    let errorNivelAcademico = "";
+    let errorEspecialidad = "";
+    let errorSituacionLaboral = "";
+    let errorCondicionesLegales= "";
 
     // Gestores de los campos del formulario
 
@@ -119,100 +119,89 @@ const Preinscripcion = () => {
     
     const submit = (e)=>{
         e.preventDefault();
-        setErrorNombre("Hola");
-        console.log(errorNombre);
 
         if(nombre===""){
-            setErrorNombre("*");
-            console.log(errorNombre);
+          errorNombre="*";
         }
 
-        // if(primerApellido === "" || !isNaN(primerApellido)){
-        //     setErrorPrimerApellido("*");
-        // }
+        if(primerApellido === "" || !isNaN(primerApellido)){
+           errorPrimerApellido="*";
+        }
 
-        // if(segundoApellido === "" || !isNaN(segundoApellido)){
-        //     setErrorSegundoApellido("*");
-        // }
+        if(segundoApellido === "" || !isNaN(segundoApellido)){
+            errorSegundoApellido="*";
+        }
 
-        // // Match para verificar la correcta formacion de la fecha de nacimiento
-        // if(fechaNacimiento===""||fechaNacimiento.match(/^(0[1-9]|[12][0-9]|3[01])[\- \/.](?:(0[1-9]|1[012])[\- \/.](19|20)[0-9]{2})$/)){
-        //     setErrorFechaNacimiento("*");
-        // }
+        // Match para verificar la correcta formacion de la fecha de nacimiento
+        if(fechaNacimiento===""||fechaNacimiento.match(/^(0[1-9]|[12][0-9]|3[01])[\- \/.](?:(0[1-9]|1[012])[\- \/.](19|20)[0-9]{2})$/)){
+            errorFechaNacimiento="*";
+        }
 
-        // if(pais==="" || !isNaN(pais) ){
-        //     setErrorPais("*");
-        // }
+        if(pais==="" || !isNaN(pais) ){
+           errorPais="*";
+        }
 
-        // if(provincia==="" || !isNaN(provincia) ){
-        //     setErrorProvincia("*");
-        // }
+        if(provincia==="" || !isNaN(provincia) ){
+           errorProvincia="*";
+        }
 
-        // if(municipio==="" || !isNaN(municipio) ){
-        //     setErrorMunicipio("*");
-        // }
+        if(municipio==="" || !isNaN(municipio) ){
+            errorMunicipio="*";
+        }
 
-        // if(dni===""){
-        //     setErrorDni("*");
-        // }
+        if(dni===""){
+            errorDni="*";
+        }
 
-        // if(telefono===""||telefono.length<9 || telefono.length>9 || isNaN(telefono)){
-        //     setErrorTelefono("*");
-        // }
+        if(telefono===""||telefono.length<9 || telefono.length>9 || isNaN(telefono)){
+            errorTelefono="*";
+        }
 
-        // if(email===""){
-        //     setErrorEmail("*");
-        // }
+        if(email===""){
+            errorEmail="*";
+        }
 
-        // if(nivelAcademico===""){
-        //     setErrorNivelAcademico("*");
-        // }
+        if(nivelAcademico===""){
+            errorNivelAcademico="*";
+        }
 
-        // if(especialidad===""){
-        //     setErrorEspecialidad("*");
-        // }
+        if(especialidad===""){
+           errorEspecialidad="*";
+        }
 
-        // if(situacionLaboral===""){
-        //     setErrorSituacionLaboral("*");
-        // }
+        if(situacionLaboral===""){
+            errorSituacionLaboral="*";
 
-        // console.log(errorNombre);
-        // if(errorNombre ==="" && errorPrimerApellido===""&&errorSegundoApellido===""&& errorFechaNacimiento===""&&errorPais===""&&errorProvincia===""&&errorMunicipio==="" && errorDni===""&&errorTelefono==="" && errorEmail===""&&errorNivelAcademico===""&&errorEspecialidad===""&&errorSituacionLaboral===""){
-        //     console.log("Enviado");
-        // }else{
-        //     console.log("Hay algun fallo");
-        // }
+        }
+
+        if(condicionesLegales===false){
+            errorCondicionesLegales="*";
+
+        }
+
+        if(errorNombre ==="" && errorPrimerApellido===""&&errorSegundoApellido===""&& errorFechaNacimiento===""&&errorPais===""&&errorProvincia===""&&errorMunicipio==="" && errorDni===""&&errorTelefono==="" && errorEmail===""&&errorNivelAcademico===""&&errorEspecialidad===""&&errorSituacionLaboral===""){
+            console.log("Enviado");
+        }else{
+            console.log("Hay algun fallo");
+        }
+        console.log(errorNombre);
         // Resetear los valores de los campos del formulario
-        // setNombre("");
-        // setPrimerApellido("");
-        // setSegundoApellido("");
-        // setFechaNacimiento("");
-        // setPais("");
-        // setProvincia("");
-        // setMunicipio("");
-        // setDni("");
-        // setTelefono("");
-        // setEmail("");
-        // setNivelAcademico("");
-        // setEspecialidad("");
-        // setSituacionLaboral("");
-        // setFormaDeAcceso("");
-        // setMedioConocimiento("");
-        // setCondicionesLegales(false);
-        // Resetear Los errores del formulario
-        setErrorNombre("");
-        setErrorPrimerApellido("");
-        setErrorSegundoApellido("");
-        setErrorFechaNacimiento("");
-        setErrorPais("");
-        setErrorProvincia("");
-        setErrorMunicipio("");
-        setErrorDni("");
-        setErrorTelefono("");
-        setErrorEmail("");
-        setErrorNivelAcademico("");
-        setErrorEspecialidad("");
-        setErrorSituacionLaboral("");
+        setNombre("");
+        setPrimerApellido("");
+        setSegundoApellido("");
+        setFechaNacimiento("");
+        setPais("");
+        setProvincia("");
+        setMunicipio("");
+        setDni("");
+        setTelefono("");
+        setEmail("");
+        setNivelAcademico("");
+        setEspecialidad("");
+        setSituacionLaboral("");
+        setFormaDeAcceso("");
+        setMedioConocimiento("");
+        setCondicionesLegales(false);
 
     }
     return (
@@ -290,21 +279,21 @@ const Preinscripcion = () => {
                             <div className="form-group col-12 col-lg-4">
                                 <label htmlFor="nivelAcademico">Nivel Academico:</label>
                                 <select name="nivelAcademico" id="nivelAcademico" value={nivelAcademico} onChange={gestorNivelAcademico}>
-
+                                    <option value="nivelAcademico" selected>Nivel Academico</option>
                                 </select>
                                 <span>{errorNivelAcademico}</span>
                             </div>
                             <div className="form-group col-12 col-lg-4">
                                 <label htmlFor="especialidad">Especialidad:</label>
                                 <select name="especialidad" id="especialidad" value={especialidad} onChange={gestorEspecialidad}>
-
+                                <option value="especialidad" selected>Especialidad</option>
                                 </select>
                                 <span>{errorEspecialidad}</span>
                             </div>
                             <div className="form-group col-12 col-lg-4">
                                 <label htmlFor="situacionLaboral">Situacion Laboral:</label>
                                 <select name="situacionLaboral" id="situacionLaboral" value={situacionLaboral} onChange={gestorSituacionLaboral}>
-
+                                    <option value="situacionLaboral">Situacion Laboral</option>
                                 </select>
                                 <span>{errorSituacionLaboral}</span>
                             </div>
