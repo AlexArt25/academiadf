@@ -7,7 +7,7 @@
 
 .main{
     height: 75vh;
-    width: 98%;
+    width: 100%;
     background-color: white;
     border-radius: 0.5rem;
     padding:1%;
@@ -88,4 +88,46 @@
     width: 30%;
     margin: 2% auto;
     border-radius: 0.5rem;
+}
+
+@media only screen and (max-width:572px){
+    .condicionesLegales{
+        width: 100%;
+    }
+    .condicionesLegales .form-group{
+        width: 80%;
+    }
+  
+    .condicionesLegales input[type="checkbox"]{
+        margin: auto;
+    }
+}
+@media only screen and (min-width:572px) and (max-width:762px){
+    .condicionesLegales{
+        width: 100%;
+    }
+    .condicionesLegales .form-group{
+        width: 60%;
+    }
+    .condicionesLegales p{
+        text-align: center;
+    }
+    .condicionesLegales input[type="checkbox"]{
+        margin: auto 0;
+    }
+}
+@media only screen and (min-width:762px) and (max-width:992px){
+    .condicionesLegales{
+        width: 100%;
+    }
+    .condicionesLegales .form-group{
+        width: 50%;
+    }
+    .condicionesLegales p{
+        text-align: left;
+    }
+
+    .condicionesLegales input[type="checkbox"]{
+        margin: auto 0;
+    }
 }

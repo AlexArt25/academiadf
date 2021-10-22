@@ -102,7 +102,9 @@ const Preinscripcion = () => {
     const submit = (e)=>{
         e.preventDefault();
 
-        console.log(nombre+""+primerApellido+""+segundoApellido+""+fechaNacimiento+""+pais+""+provincia+""+municipio+""+dni+""+telefono+""+email+""+nivelAcademico+""+especialidad+""+situacionLaboral+""+formaDeAcceso+""+medioConocimiento+""+condicionesLegales);
+        if(nombre === "" || !isNaN(nombre)){
+            
+        }
 
         // Resetear los valores de los campos del formulario
         setNombre("");
@@ -222,10 +224,10 @@ const Preinscripcion = () => {
                         <div className="headerPreinscripcion col-12">
                             <h3>Condiciones Legales</h3>
                         </div>
-                        <div className="datosPreinscripcion">
+                        <div className="datosPreinscripcion condicionesLegales">
                             <div className="form-group col-12">
-                            <input type="checkbox" className="col-1" name="condicionesLegales" id="condicionesLegales" onChange={gestorCondicionesLegales}/>
-                            <p className="col-10">He leido y acepto las <a href="https://www.academiadf.com/adfv2012/ADF_Politica.aspx">Condiciones Legales</a></p>
+                            <input type="checkbox" name="condicionesLegales" id="condicionesLegales" onChange={gestorCondicionesLegales}/>
+                            <p>He leido y acepto las <a href="https://www.academiadf.com/adfv2012/ADF_Politica.aspx">Condiciones Legales</a></p>
                             </div>
                         </div>
                         <button>Preinscribirte</button>
