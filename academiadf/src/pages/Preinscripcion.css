@@ -90,6 +90,10 @@
     border-radius: 0.5rem;
 }
 
+span{
+    color: red;
+}
+
 @media only screen and (max-width:572px){
     .condicionesLegales{
         width: 100%;
