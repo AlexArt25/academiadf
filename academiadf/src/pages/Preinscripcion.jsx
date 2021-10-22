@@ -229,22 +229,22 @@ const Preinscripcion = () => {
                         <div className="datosPreinscripcion">
                             <div className="form-group col-12 col-md-6">
                                 <label htmlFor="nombre">Nombre:</label>
-                                <input type="text" name="nombre" id="nombre" value={nombre} onChange={gestorNombre}  />
+                                <input type="text" name="nombre" id="nombre" onChange={gestorNombre} value={nombre} />
                                 <span>{errorNombre}</span>
                             </div>
                             <div className="form-group col-12 col-md-6">
                                 <label htmlFor="primerApellido">Primer Apellido:</label>
-                                <input type="text" name="primerApellido" id="primerApellido" value={primerApellido} onChange={gestorPrimerApellido}  />
+                                <input type="text" name="primerApellido" id="primerApellido" onChange={gestorPrimerApellido}  value={primerApellido} />
                                 <span>{errorPrimerApellido}</span>
                             </div>
                             <div className="form-group col-12 col-md-6"> 
                                 <label htmlFor="segundoApellido">Segundo Apellido:</label>
-                                <input type="text" name="segundoApellido" id="segundoApellido" value={segundoApellido} onChange={gestorSegundoApellido}  />
+                                <input type="text" name="segundoApellido" id="segundoApellido" onChange={gestorSegundoApellido} value={segundoApellido} />
                                 <span>{errorSegundoApellido}</span>
                             </div>
                             <div className="form-group col-12 col-md-6"> 
                                 <label htmlFor="fechaNacimiento">Fecha Nacimiento:</label>
-                                <input type="date" name="fechaNacimiento" id="fechaNacimiento" value={fechaNacimiento} onChange={gestorFechaNacimiento}  />
+                                <input type="date" name="fechaNacimiento" id="fechaNacimiento" onChange={gestorFechaNacimiento} value={fechaNacimiento} />
                                 <span>{errorFechaNacimiento}</span>
                             </div>
                             <div className="form-group col-12 col-md-6">
