@@ -3,6 +3,7 @@ import "./Formacion.css";
 const Formacion = () => {
     return (
         <div className="divFormacion">
+            {/* Hola */}
         </div>
     )
 }
