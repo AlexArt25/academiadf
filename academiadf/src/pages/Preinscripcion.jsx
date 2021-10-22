@@ -183,22 +183,22 @@ const Preinscripcion = () => {
         //     console.log("Hay algun fallo");
         // }
         // Resetear los valores de los campos del formulario
-        setNombre("");
-        setPrimerApellido("");
-        setSegundoApellido("");
-        setFechaNacimiento("");
-        setPais("");
-        setProvincia("");
-        setMunicipio("");
-        setDni("");
-        setTelefono("");
-        setEmail("");
-        setNivelAcademico("");
-        setEspecialidad("");
-        setSituacionLaboral("");
-        setFormaDeAcceso("");
-        setMedioConocimiento("");
-        setCondicionesLegales(false);
+        // setNombre("");
+        // setPrimerApellido("");
+        // setSegundoApellido("");
+        // setFechaNacimiento("");
+        // setPais("");
+        // setProvincia("");
+        // setMunicipio("");
+        // setDni("");
+        // setTelefono("");
+        // setEmail("");
+        // setNivelAcademico("");
+        // setEspecialidad("");
+        // setSituacionLaboral("");
+        // setFormaDeAcceso("");
+        // setMedioConocimiento("");
+        // setCondicionesLegales(false);
         // Resetear Los errores del formulario
         setErrorNombre("");
         setErrorPrimerApellido("");

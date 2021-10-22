@@ -1,5 +1,5 @@
 import React from 'react';
-import "../pages/Formacion.css";
+import "./Formacion.css";
 import MenuHeader from '../components/MenuHeader.jsx';
 import { FaMapMarkedAlt } from "react-icons/fa";
 import { FaClock } from 'react-icons/fa';
@@ -60,16 +60,16 @@ const Formacion = () => {
     ];
     const meInteresa = (curso) =>{
         const cursoInteres = curso;
-        history.push({pathname:"/informacionCurso", state:{curso:{cursoInteres}}});
+        // history.push({pathname:"/informacionCurso", state:{curso:{cursoInteres}}});
         // console.log("Hola");
     };
     return (
             <div className="divFormacion">
-                <MenuHeader/>
-                <main className="main">
+                <MenuHeader />
+                <main className="main2">
                  {arrayCursos.map(curso => {
-                    <div className="contenedor_tarjeta">
-			
+                   return(
+                   <div className="contenedor_tarjeta">
 				        <figure id="tarjeta">
                          <img src={curso.imagenCurso} className="frontal" alt="Logo del Curso"></img>
 					        <figcaption className="trasera">
@@ -78,15 +78,13 @@ const Formacion = () => {
 						    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis cupiditate voluptates ipsum suscipit, aspernatur eum, amet nemo architecto nihil corrupti.</p>
 					        </figcaption>
 				        </figure>
-			
 		            </div>
-                    })}
-            
-  
+                    )
+                     })}
                 </main>
-        
             </div>
-     ) }           
+     )
+    };           
    
     
 export default Formacion

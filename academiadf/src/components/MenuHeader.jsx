@@ -17,7 +17,7 @@ const MenuHeader = () => {
                     <Nav.Link className="link" href="/inicio">Inicio</Nav.Link>
                     <Nav.Link className="link" href="/formacion">Formacion</Nav.Link>
                     <Nav.Link className="link" href="/empleo">Empleo</Nav.Link>
-                    <Nav.Link className="link" href="/formacion">Formacion</Nav.Link>
+                    {/* <Nav.Link className="link" href="/formacion">Formacion</Nav.Link> */}
                     <NavDropdown title="Sobre Nosotros" className="link" id="basic-nav-dropdown">
                     {/* <NavDropdown.Item className="dropDownMenu" href="/Contacto">Contacto</NavDropdown.Item> */}
                     </NavDropdown>

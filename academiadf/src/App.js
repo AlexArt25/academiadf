@@ -21,7 +21,7 @@ function App() {
           <InformacionCurso/>
         </Route>
         <Route path="/formacion">
-          <Formacion/>
+          <Formacion />
         </Route>
         <Route path="/empleo">
           <Empleo/>
