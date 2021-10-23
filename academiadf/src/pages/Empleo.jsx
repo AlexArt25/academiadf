@@ -6,7 +6,7 @@ import img2 from "../img/carousel/2.jpg"
 import img3 from "../img/carousel/4.jpg"
 import img4 from "../img/carousel/5.jpg"
 import { Carousel } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { useState } from 'react';
 const Empleo = () => {
   const [nombre,setNombre] = useState("");
@@ -14,7 +14,12 @@ const Empleo = () => {
   const [telefono,setTelefono] = useState("");
   const [mensaje,setMensaje] = useState("");
   const [condicionesLegales,setCondicionesLegales] = useState(false);
-  const [errores,setErrores] = useState("");
+  // Manejo de los errores
+  const [errorNombre,setErrorNombre] = useState("");
+  const [errorEmail,setErrorEmail] = useState("");
+  const [errorTelefono,setErrorTelefono] = useState("");
+  const [errorMensaje,setErrorMensaje] = useState("");
+  const [errorCondicionesLegales,setErrorCondicionesLegales] = useState(false);
   const gestorNombre = (e)=>{
     setNombre(e.target.value);
   };
@@ -30,33 +35,44 @@ const Empleo = () => {
   const gestorMensaje = (e)=>{
     setMensaje(e.target.value);
   }
-
+  
   const gestorCondicionesLegales = (e) =>{
     if(condicionesLegales !== true){
         setCondicionesLegales(true);
     }else{
         setCondicionesLegales(false);
     }
-  }
-
+}
+  
   const submit = (e) =>{
     e.preventDefault();
-    if(nombre === "" || !isNaN(nombre)){
-        setErrores("Escriba un nombre válido");
+    if(nombre === ""){
+      setErrorNombre("*");
+    }else{
+      setErrorNombre("");
     }
     if(email ===""){
-        setErrores("Escriba un email válido");
+      setErrorEmail("*");
+    }else{
+      setErrorEmail("");
     }
     if(telefono.length <9 || isNaN(telefono)|| telefono===""){
-        setErrores("Escriba un numnero de telefono valido");
+        setErrorTelefono("*");
+    }else{
+      setErrorTelefono("");
     }
     if(mensaje === ""){
-        setErrores("Debe escribir un mensaje");
+        setErrorMensaje("*");
+    }else{
+      setErrorMensaje("");
     }
-   if(errores===""){
+    if(condicionesLegales === false){
+      setErrorCondicionesLegales("*");
+    }else{
+      setCondicionesLegales("");
+    }
+   if(errorNombre==="" && errorTelefono===""&&errorMensaje===""&& errorEmail===""&&errorCondicionesLegales===""){
      console.log(nombre + " " +email+ " " +telefono+ " " +mensaje+ " " +condicionesLegales);
-   }else{
-     console.log(errores);
    }
     setNombre("");
     setEmail("");
@@ -105,12 +121,12 @@ return (
           <div className="tarjetaEmpleo col-10 col-md-5">
             <h4>Si buscas Empleo</h4>
             <p>Bolsa de empleo Servicio de orientación laboral individualizado Asesoramiento para emprendedores Talleres de búsqueda activa de empleo, motivación y simulación de entrevistas</p>
-            <div className="button"><a href="https://www.empleoaqui.com/candidatos" target="_blank"> Ver ofertas de Empleo</a></div>
+            <div className="button"><a href="https://www.empleoaqui.com/candidatos" target="_blank" rel="noreferrer"> Ver ofertas de Empleo</a></div>
           </div>
           <div className="tarjetaEmpresa col-10 col-md-5">
             <h4>Si eres una Empresa</h4>
             <p>Bolsa de empleo Servicio de orientación laboral individualizado Asesoramiento para emprendedores Talleres de búsqueda activa de empleo, motivación y simulación de entrevistas</p>
-            <div className="button"><a href="https://www.empleoaqui.com/empresas" target="_blank"> Encontrar Candidatos</a></div>
+            <div className="button"><a href="https://www.empleoaqui.com/empresas" target="_blank" rel="noreferrer"> Encontrar Candidatos</a></div>
           </div>
         </div>
           <h3>¿Que son las agencias de colocación?</h3>
@@ -136,17 +152,23 @@ return (
             <form action="" onSubmit={submit}>
               <label htmlFor="nombre">Nombre:</label>
               <input type="text" name="nombre" id="nombre" value={nombre} onChange={gestorNombre}/>
+              <span>{errorNombre}</span>
               <label htmlFor="email">Email:</label>
               <input type="email" name="email" id="email" value={email} onChange={gestorEmail}/>
+              <span>{errorEmail}</span>
               <label htmlFor="telefono">Telefono:</label>
               <input type="tel" name="telefono" id="telefono" maxLength="9" value={telefono} onChange={gestorTelefono}/>
+              <span>{errorTelefono}</span>
               <label htmlFor="mensaje">Mensaje:</label>
               <textarea name="mensaje" id="mensaje" value={mensaje} onChange={gestorMensaje}>
+                
 
               </textarea>
+              <span>{errorMensaje}</span>
               <div className="form-check col-12">
                         <input type="checkbox" name="condicionesLegales" id="condicionesLegales" onChange={gestorCondicionesLegales}/>
                         <p>He leido y acepto las <a href="https://www.academiadf.com/adfv2012/ADF_Politica.aspx">Condiciones Legales</a></p>
+                        <span>{errorCondicionesLegales}</span>
               </div>
               <button>Enviar</button>
             </form>
