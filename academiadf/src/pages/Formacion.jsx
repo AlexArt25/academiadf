@@ -107,13 +107,15 @@ const gestorSituacionLaboral = (e) =>{
            }
         }
     }
+    // Funcion del boton de me interesa el curso
+    const meInteresa = (curso) =>{
+        const cursoInteres = curso;
+        history.push({pathname:"/informacionCurso", state:{curso:{cursoInteres}}});
+        console.log("Hola");
+    };
+
     // UseEffect para actualizar segun la busqueda
     useEffect(()=>{},[arrayCursos]);
-    // const meInteresa = (curso) =>{
-    //     const cursoInteres = curso;
-    //     // history.push({pathname:"/informacionCurso", state:{curso:{cursoInteres}}});
-    //     // console.log("Hola");
-    // };
     return (
             <div className="divFormacion">
                 <MenuHeader />
@@ -145,13 +147,16 @@ const gestorSituacionLaboral = (e) =>{
                     <div className="cursos">
                         {arrayCursos.map(curso => {
                         return(
-                        <div className="contenedor_tarjeta col-9 col-sm-9 col-md-4">
+                        <div className="contenedor_tarjeta col-9 col-sm-8 col-md-5 col-lg-3">
                                 <figure id="tarjeta">
                                 <img src={curso.imagenCurso} className="frontal" alt="Logo del Curso"></img>
                                     <figcaption className="trasera">
-                                    {/* <h2 class="titulo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, vero!</h2>
-                                    <hr/>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis cupiditate voluptates ipsum suscipit, aspernatur eum, amet nemo architecto nihil corrupti.</p> */}
+                                        <h2>{curso.direccion}</h2>
+                                        <h4>Horas:{curso.horasLectivas}</h4>
+                                        <p>{curso.descripcion}</p>
+                                    <div className="botonMasInfo col-12">
+                                        <button onClick={()=>{meInteresa(curso)}}>Me Interesa</button>
+                                    </div>
                                     </figcaption>
                                 </figure>
                             </div>
