@@ -29,26 +29,25 @@ const Preinscripcion = () => {
 
     // Manejo de errores
 
-    let errorNombre = "";
-    let errorPrimerApellido = "";
-    let errorSegundoApellido = "";
-    let errorFechaNacimiento = "";
-    let errorPais = "";
-    let errorProvincia = "";
-    let errorMunicipio = "";
-    let errorDni = "";
-    let errorTelefono = "";
-    let errorEmail = "";
-    let errorNivelAcademico = "";
-    let errorEspecialidad = "";
-    let errorSituacionLaboral = "";
-    let errorCondicionesLegales= "";
+    let [errorNombre,setErrorNombre] = useState("");
+    let [errorPrimerApellido, setErrorPrimerApellido ]= useState("");
+    let [errorSegundoApellido,setErrorSegundoApellido] = useState("");
+    let [errorFechaNacimiento, setErrorFechaNacimiento ] = useState("");
+    let [errorPais,setErrorPais ] = useState("");
+    let [errorProvincia , setErrorProvincia]= useState("");
+    let [errorMunicipio, setErrorMunicipio] = useState("");
+    let [errorDni, setErrorDni] = useState("");
+    let [errorTelefono , setErrorTelefono]= useState("");
+    let [errorEmail, setErrorEmail ] = useState("");
+    let [errorNivelAcademico, setErrorNivelAcademico ] = useState("");
+    let [errorEspecialidad, setErrorEspecialidad]= useState("");
+    let [errorSituacionLaboral, setErrorSituacionLaboral ] = useState("");
+    let [errorCondicionesLegales, setErrorCondicionesLegales ]= useState("");
 
     // Gestores de los campos del formulario
 
     const gestorNombre = (e) =>{
         setNombre(e.target.value);
-        console.log(nombre);
     }
 
     const gestorPrimerApellido = (e) =>{
@@ -121,70 +120,98 @@ const Preinscripcion = () => {
         e.preventDefault();
 
         if(nombre===""){
-          errorNombre="*";
+          setErrorNombre("*");
+        }else{
+            setErrorNombre("");  
         }
 
         if(primerApellido === "" || !isNaN(primerApellido)){
-           errorPrimerApellido="*";
+           setErrorPrimerApellido("*");
+        }else{
+            setErrorPrimerApellido("");
         }
 
         if(segundoApellido === "" || !isNaN(segundoApellido)){
-            errorSegundoApellido="*";
+           setErrorSegundoApellido("*");
+        }else{
+            setErrorSegundoApellido("");
         }
 
         // Match para verificar la correcta formacion de la fecha de nacimiento
         if(fechaNacimiento===""||fechaNacimiento.match(/^(0[1-9]|[12][0-9]|3[01])[\- \/.](?:(0[1-9]|1[012])[\- \/.](19|20)[0-9]{2})$/)){
-            errorFechaNacimiento="*";
+            setErrorFechaNacimiento("*");
+        }else{
+            setErrorFechaNacimiento("");
         }
 
         if(pais==="" || !isNaN(pais) ){
-           errorPais="*";
+           setErrorPais("*");
+        }else{
+            setErrorPais("");
         }
 
         if(provincia==="" || !isNaN(provincia) ){
-           errorProvincia="*";
+           setErrorProvincia("*");
+        }else{
+            setErrorProvincia("");
         }
 
         if(municipio==="" || !isNaN(municipio) ){
-            errorMunicipio="*";
+         setErrorMunicipio("*");
+        }else{
+            setErrorMunicipio("");
         }
 
         if(dni===""){
-            errorDni="*";
+           setErrorDni("*");
+        }else{
+            setErrorDni("");
         }
 
         if(telefono===""||telefono.length<9 || telefono.length>9 || isNaN(telefono)){
-            errorTelefono="*";
+           setErrorTelefono("*");
+        }else{
+            setErrorTelefono("");
         }
 
         if(email===""){
-            errorEmail="*";
+            setErrorEmail("*");
+        }else{
+            setErrorEmail("");
         }
 
         if(nivelAcademico===""){
-            errorNivelAcademico="*";
+           setErrorNivelAcademico("*");
+        }else{
+            setErrorCondicionesLegales("");
         }
 
         if(especialidad===""){
-           errorEspecialidad="*";
+          setErrorEspecialidad("*");
+        }else{
+            setErrorEspecialidad("");
         }
 
         if(situacionLaboral===""){
-            errorSituacionLaboral="*";
+            setErrorSituacionLaboral("*");
 
+        }else{
+            setErrorSituacionLaboral("");
         }
 
         if(condicionesLegales===false){
-            errorCondicionesLegales="*";
+            setErrorCondicionesLegales("*");
 
+        }else{
+            setErrorCondicionesLegales("");
         }
 
-        if(errorNombre ==="" && errorPrimerApellido===""&&errorSegundoApellido===""&& errorFechaNacimiento===""&&errorPais===""&&errorProvincia===""&&errorMunicipio==="" && errorDni===""&&errorTelefono==="" && errorEmail===""&&errorNivelAcademico===""&&errorEspecialidad===""&&errorSituacionLaboral===""){
+        if(errorNombre ==="" && errorPrimerApellido===""&&errorSegundoApellido===""&& errorFechaNacimiento===""&&errorPais===""&&errorProvincia===""&&errorMunicipio==="" && errorDni===""&&errorTelefono==="" && errorEmail===""&&errorNivelAcademico===""&&errorEspecialidad===""&&errorSituacionLaboral===""&&errorCondicionesLegales===""){
             console.log("Enviado");
         }else{
             console.log("Hay algun fallo");
         }
-        console.log(errorNombre);
+    
         // Resetear los valores de los campos del formulario
         setNombre("");
         setPrimerApellido("");
@@ -280,6 +307,7 @@ const Preinscripcion = () => {
                                 <label htmlFor="nivelAcademico">Nivel Academico:</label>
                                 <select name="nivelAcademico" id="nivelAcademico" value={nivelAcademico} onChange={gestorNivelAcademico}>
                                     <option value="nivelAcademico" selected>Nivel Academico</option>
+                                    <option value="otra">otra</option>
                                 </select>
                                 <span>{errorNivelAcademico}</span>
                             </div>
@@ -287,6 +315,7 @@ const Preinscripcion = () => {
                                 <label htmlFor="especialidad">Especialidad:</label>
                                 <select name="especialidad" id="especialidad" value={especialidad} onChange={gestorEspecialidad}>
                                 <option value="especialidad" selected>Especialidad</option>
+                                <option value="otra">otra</option>
                                 </select>
                                 <span>{errorEspecialidad}</span>
                             </div>
@@ -294,6 +323,7 @@ const Preinscripcion = () => {
                                 <label htmlFor="situacionLaboral">Situacion Laboral:</label>
                                 <select name="situacionLaboral" id="situacionLaboral" value={situacionLaboral} onChange={gestorSituacionLaboral}>
                                     <option value="situacionLaboral">Situacion Laboral</option>
+                                    <option value="otra">otra</option>
                                 </select>
                                 <span>{errorSituacionLaboral}</span>
                             </div>
@@ -305,12 +335,12 @@ const Preinscripcion = () => {
                             <div className="form-group col-12 col-md-6">
                                 <label htmlFor="formaDeAcceso">¿Como nos has Conocido?</label>
                                 <select name="formaDeAcceso" id="formaDeAcceso" value={formaDeAcceso} onChange={gestorFormaAcceso}>
-
+                                    <option value="---">---</option>
                                 </select>
                             </div>
                             <div className="form-group col-12 col-md-6">
                                 <label htmlFor="medioConocimiento">Otro Medio:</label>
-                                <input type="text" name="medioConocimiento" id="medioConocimento" value={medioConocimiento} onChange={gestorMedioConocimiento}/>
+                                <input type="text" name="medioConocimiento" id="medioConocimiento" value={medioConocimiento} onChange={gestorMedioConocimiento}/>
                             </div>
                         </div>
                         <div className="headerPreinscripcion col-12">
@@ -324,7 +354,7 @@ const Preinscripcion = () => {
                         </div>
                         <button>Preinscribirte</button>
                     </form>
-                </div>   
+                </div> 
             </main>
         </div>
     )

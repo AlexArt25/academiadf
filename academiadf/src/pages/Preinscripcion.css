@@ -57,6 +57,10 @@
 }
 
 .datosPreinscripcion label{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 40%;
    font-weight: bold;
    font-style: italic;
@@ -90,10 +94,8 @@
     border-radius: 0.5rem;
 }
 
-span{
-    width: 50%;
+.formularioPreinscripcion span{
     color: red;
-    font-size: 2rem;
     font-weight: bold;
 }
 
@@ -101,6 +103,10 @@ span{
     .condicionesLegales{
         width: 100%;
     }
+    .datosPreinscripcion.form-group{
+        max-height: 20%;
+    }
+
     .condicionesLegales .form-group{
         width: 80%;
     }
