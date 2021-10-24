@@ -122,11 +122,11 @@ const gestorSituacionLaboral = (e) =>{
                     <main className="main2">
                     <div className="menuFormacion col-12">
                         <form action="" onSubmit={buscarCurso}>
-                            <div className="form-group col-4">
+                            <div className="form-group col-12 col-lg-4">
                                 <label htmlFor="nombreCurso">Nombre del Curso:</label>
                                 <input type="text" name="nombreCurso" id="nombreCurso" onChange={gestorNombreCurso} value={curso} />
                             </div>
-                            <div className="form-group col-4">
+                            <div className="form-group col-12 col-lg-4">
                                 <label htmlFor="familiaProfesional">Familia Profesional:</label>
                                 <select name="familiaProfesional" id="familiaProfesional" onChange={gestorFamiliaProfesional}>
                                     {arrayCursos.map(curso=>{
@@ -134,7 +134,7 @@ const gestorSituacionLaboral = (e) =>{
                                     })}
                                 </select>
                             </div>
-                            <div className="form-group col-4">
+                            <div className="form-group col-12 col-lg-4">
                                 <label htmlFor="situacionLaboral">Situación Laboral:</label>
                                 <select name="situacionLaboral" id="situacionLaboral" onChange={gestorSituacionLaboral}>
                                 {arrayCursos.map(curso=>{
@@ -150,13 +150,18 @@ const gestorSituacionLaboral = (e) =>{
                         <div className="contenedor_tarjeta col-9 col-sm-8 col-md-5 col-lg-3">
                                 <figure id="tarjeta">
                                 <img src={curso.imagenCurso} className="frontal" alt="Logo del Curso"></img>
+                                <div className="titulo">
+                                    <h2>{curso.nombre}</h2>
+                                </div>
                                     <figcaption className="trasera">
-                                        <h2>{curso.direccion}</h2>
-                                        <h4>Horas:{curso.horasLectivas}</h4>
-                                        <p>{curso.descripcion}</p>
-                                    <div className="botonMasInfo col-12">
-                                        <button onClick={()=>{meInteresa(curso)}}>Me Interesa</button>
-                                    </div>
+                                        <div className="contenidoTarjeta">
+                                            <h2>{curso.direccion}</h2>
+                                            <h4>Horas:{curso.horasLectivas}</h4>
+                                            <p>{curso.descripcion}</p>
+                                        </div>
+                                            <div className="botonMasInfo col-12">
+                                                <button onClick={()=>{meInteresa(curso)}}>Me Interesa</button>
+                                            </div>
                                     </figcaption>
                                 </figure>
                             </div>
