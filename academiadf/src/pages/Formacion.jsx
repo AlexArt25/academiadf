@@ -15,7 +15,12 @@ const history = useHistory();
 const [curso,setCurso] = useState("");
 const [familiaProfesional,setFamiliaProfesional] = useState("");
 const [situacionLaboral,setSituacionLaboral] = useState("");
-const [busqueda,setBusqueda] = useState("");
+
+// Variables para evitar la repeticion de los select del buscador
+
+const [selectFP,setSelectFP] = useState([]);
+const [selectSitacion,setSelectSituacion] = useState([]);
+
 const [arrayCursos,setArrayCursos] = useState([
         {
             imagenCurso:"https://adfdatos.blob.core.windows.net/adf-img-cursos/20-35003013-docencia-de-la-formacion-profesional-para-el-empleo.png",
@@ -78,6 +83,31 @@ const [arrayCursos,setArrayCursos] = useState([
             estadoMatricula:"-"
         }
 ]);
+// La busqueda es asignada por defecto al array de cursos para que al cargar la pagina muestre todo el array
+const [busqueda,setBusqueda] = useState([...arrayCursos]);
+
+// Evitar la repeticion de los select
+const selectFamiliaProfesional = ()=>{
+    let a = [];
+    arrayCursos.forEach(curso=>{
+        if(!a.includes(curso.familiaProfesional)){
+            a.push(curso.familiaProfesional);
+        }
+    });
+    setSelectFP(a);
+    
+}
+
+const selectSituacionLaboral = ()=>{
+    let a = [];
+    arrayCursos.forEach(curso=>{
+        if(!a.includes(curso.destinatarios)){
+            a.push(curso.destinatarios);
+        }
+    });
+    setSelectSituacion(a);
+    
+}
 
 // Gestores del formulario
 
@@ -86,36 +116,89 @@ const gestorNombreCurso = (e) =>{
 }
 
 const gestorFamiliaProfesional = (e) =>{
-    setCurso(e.target.value);
+    setFamiliaProfesional(e.target.value);
 }
 
 const gestorSituacionLaboral = (e) =>{
-    setCurso(e.target.value);
+    setSituacionLaboral(e.target.value);
 }
 
-    const buscarCurso = (e) =>{
+const mostrarCursos = () =>{
+
+     return busqueda.map(curso => {
+            return(
+                <div className="contenedor_tarjeta col-9 col-sm-8 col-md-5 col-lg-3">
+                    <figure id="tarjeta">
+                    <img src={curso.imagenCurso} className="frontal" alt="Logo del Curso"></img>
+                    <div className="titulo">
+                        <h2>{curso.nombre}</h2>
+                    </div>
+                        <figcaption className="trasera">
+                            <div className="contenidoTarjeta">
+                                <h2>{curso.direccion}</h2>
+                                <h4>Horas:{curso.horasLectivas}</h4>
+                                <p>{curso.descripcion}</p>
+                            </div>
+                                <div className="botonMasInfo col-12">
+                                    <button onClick={()=>{meInteresa(curso)}}>Me Interesa</button>
+                                </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                )
+                });
+        
+}
+
+const buscarCurso = (e) =>{
         e.preventDefault();
 
         if(curso !=="" || familiaProfesional!=="" || situacionLaboral!=="" ){
-           if(curso!==""){
-               arrayCursos.forEach(e=>{
-                if(e.nombre === curso){
-                    setArrayCursos(e);
-                }
-               });
-               console.log(busqueda);
-           }
+            if(curso!==""){
+                arrayCursos.forEach(e=>{
+                    if(e.nombre === curso){
+                        setBusqueda([e]);
+                    }
+                });
+            }
+
+            if(familiaProfesional!==""){
+                arrayCursos.forEach(e=>{
+                    if(e.familiaProfesional === familiaProfesional){
+                        console.log(e.familiaProfesional);
+                        setBusqueda([e]);
+                    }
+                });
+            }
+
+            if(situacionLaboral!==""){
+                arrayCursos.forEach(e=>{
+                    if(e.destinatarios === situacionLaboral){
+                        console.log(e.familiaProfesional);
+                        setBusqueda([e]);
+                    }
+                    });
+            }
+        }else{
+            setBusqueda([...arrayCursos]);
         }
-    }
-    // Funcion del boton de me interesa el curso
-    const meInteresa = (curso) =>{
-        const cursoInteres = curso;
-        history.push({pathname:"/informacionCurso", state:{curso:{cursoInteres}}});
-        console.log("Hola");
-    };
+    
+    setCurso("");
+    setFamiliaProfesional("");
+    setSituacionLaboral("");
+
+}
+    // Funcion del boton de me interesa el curso que lleva a su pagina de mas informacion del curso
+const meInteresa = (curso) =>{
+    const cursoInteres = curso;
+    history.push({pathname:"/informacionCurso", state:{curso:{cursoInteres}}});
+};
 
     // UseEffect para actualizar segun la busqueda
-    useEffect(()=>{},[arrayCursos]);
+    useEffect(()=>{mostrarCursos();},[busqueda]);
+    // UseEffect para cargar los select del buscador al cargar la pagina
+    useEffect(()=>{selectFamiliaProfesional();},[]);
+    useEffect(()=>{selectSituacionLaboral();},[]);
     return (
             <div className="divFormacion">
                 <MenuHeader />
@@ -128,24 +211,30 @@ const gestorSituacionLaboral = (e) =>{
                             </div>
                             <div className="form-group col-12 col-lg-4">
                                 <label htmlFor="familiaProfesional">Familia Profesional:</label>
-                                <select name="familiaProfesional" id="familiaProfesional" onChange={gestorFamiliaProfesional}>
-                                    {arrayCursos.map(curso=>{
-                                        return <option value={curso.familiaProfesional}>{curso.familiaProfesional}</option>
-                                    })}
+                                <select name="familiaProfesional" id="familiaProfesional" onChange={gestorFamiliaProfesional} value={familiaProfesional}>
+                                    <option value=""> --- </option>
+                                    {
+                                   selectFP.map(curso=>{
+                                    return <option value={curso}>{curso}</option>    
+                                   })
+                                }
                                 </select>
                             </div>
                             <div className="form-group col-12 col-lg-4">
                                 <label htmlFor="situacionLaboral">Situación Laboral:</label>
-                                <select name="situacionLaboral" id="situacionLaboral" onChange={gestorSituacionLaboral}>
-                                {arrayCursos.map(curso=>{
-                                        return <option value={curso.destinatarios}>{curso.destinatarios}</option>
-                                    })}
+                                <select name="situacionLaboral" id="situacionLaboral" onChange={gestorSituacionLaboral} value={situacionLaboral}>
+                                <option value=""> --- </option>
+                                    {
+                                        selectSitacion.map(curso=>{
+                                            return <option value={curso}>{curso}</option>    
+                                           })
+                                    }
                                 </select>
                             </div>
                         </form>
                     </div>
                     <div className="cursos">
-                        {arrayCursos.map(curso => {
+                        {/* {busqueda.map(curso => {
                         return(
                         <div className="contenedor_tarjeta col-9 col-sm-8 col-md-5 col-lg-3">
                                 <figure id="tarjeta">
@@ -166,7 +255,8 @@ const gestorSituacionLaboral = (e) =>{
                                 </figure>
                             </div>
                             )
-                            })}
+                            })} */}
+                            {mostrarCursos()}
                     </div>
                 </main>
             </div>
