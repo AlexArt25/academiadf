@@ -1,0 +1,66 @@
+.divFooter{
+    height: 30vh;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.colaboradores{
+    background-color: transparent;
+}
+.empresa{
+    background-color: transparent;
+}
+.newsLetter{
+    background-color: transparent;
+}
+
+.imgColaboradores{
+    height: 90%;
+    width: 96%;
+    margin: 2% auto;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0.25rem 0.23rem 0.7rem rgba(0, 0, 0, 0.3);
+}
+
+.imgColaboradores a{
+    height: 33,3%;
+    width: 50%;
+}
+.imgColaboradores img{
+    height: 3.5rem;
+    width: 45%;
+    margin: 1% 1%;
+}
+
+#sepe img{
+    width: 98% !important;
+    background-color: red;
+}
+
+#img012 img{
+    width: 15%;
+    margin-left: 20%;
+}
+
+.imgEmpresa{
+    height: 90%;
+    width: 96%;
+    margin: 2% auto;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0.25rem 0.23rem 0.7rem rgba(0, 0, 0, 0.3);
+}
+
+.divNewsLetter{
+    height: 90%;
+    width: 96%;
+    margin: 2% auto;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0.25rem 0.23rem 0.7rem rgba(0, 0, 0, 0.3);
+}

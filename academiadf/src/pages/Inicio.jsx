@@ -6,6 +6,7 @@ import { FaClock } from 'react-icons/fa';
 import { FaCalendarAlt } from 'react-icons/fa';
 import { FaFlag } from 'react-icons/fa';
 import { useHistory } from 'react-router-dom';
+import Footer from '../components/Footer';
 // import InformacionCurso from './InformacionCurso';
 const Inicio = () => {
     // Localizacion actual
@@ -98,6 +99,7 @@ const Inicio = () => {
                     );
                 })}
             </main>   
+            <Footer/>
         </div>
     )
 }

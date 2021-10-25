@@ -1,11 +1,11 @@
 .divInicio{
-    height: 100vh;
+    height: 100%;
     width: 100%;
     background: rgb(124,184,231);
     background: linear-gradient(90deg, rgba(124,184,231,1) 0%, rgba(30,88,155,0.98) 100%);
 }
 .main{
-    height: 75vh;
+    height: 75%;
     width: 100%;
     background-color: white;
     border-radius: 0.5rem;
