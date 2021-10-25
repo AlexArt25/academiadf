@@ -1,5 +1,6 @@
 import React from 'react'
 import "./Empleo.css";
+import Footer from '../components/Footer';
 import MenuHeader from "../components/MenuHeader.jsx"
 import img1 from "../img/carousel/1.jpg"
 import img2 from "../img/carousel/2.jpg"
@@ -175,6 +176,7 @@ return (
           </div>
         </div>
     </main>
+    <Footer/>
 </div>
 )
 }

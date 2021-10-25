@@ -1,5 +1,6 @@
 import React from 'react'
 import MenuHeader from '../components/MenuHeader';
+import Footer from '../components/Footer';
 import "./SobreNosotros.css";
 const SobreNosotros = () => {
     return (
@@ -40,6 +41,7 @@ const SobreNosotros = () => {
                     </p>
                 </div>
             </main>
+            <Footer/>
         </div>
     )
 }

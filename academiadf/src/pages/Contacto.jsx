@@ -2,6 +2,7 @@ import React from 'react'
 import MenuHeader from '../components/MenuHeader';
 import { useState } from 'react';
 import "./Contacto.css";
+import Footer from '../components/Footer';
 const Contacto = () => {
     const [nombre,setNombre] = useState("");
     const [email,setEmail] = useState("");
@@ -146,6 +147,7 @@ const Contacto = () => {
                     </form>
                 </div>
             </main>
+            <Footer/>
         </div>
     )
 }

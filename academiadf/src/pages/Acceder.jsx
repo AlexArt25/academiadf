@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import Footer from '../components/Footer';
 import MenuHeader from '../components/MenuHeader';
 import "./Acceder.css";
 const Acceder = () => {
@@ -69,6 +70,7 @@ const Acceder = () => {
                     </form>
                 </div>
             </main>
+            <Footer/>
         </div>
     )
 }

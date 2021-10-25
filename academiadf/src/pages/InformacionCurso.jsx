@@ -2,6 +2,7 @@ import React from 'react'
 import "./InformacionCurso.css"
 import { useLocation, useHistory } from 'react-router';
 import MenuHeader from '../components/MenuHeader';
+import Footer from '../components/Footer';
 const InformacionCurso = (props) => {
 // Declaramos el history para pasar los datos a la siguiente pagina segun sea la eleccion del usuario
 const history = useHistory();
@@ -92,6 +93,7 @@ return (
             </div>
         </div>
     </main>
+    <Footer/>
 </div>
 )
 }

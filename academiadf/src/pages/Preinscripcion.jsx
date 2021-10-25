@@ -1,6 +1,7 @@
 import React from 'react'
 import { useLocation} from 'react-router';
 import MenuHeader from '../components/MenuHeader';
+import Footer from '../components/Footer';
 import { useState } from 'react';
 import "./Preinscripcion.css";
 const Preinscripcion = () => {
@@ -356,6 +357,7 @@ const Preinscripcion = () => {
                     </form>
                 </div> 
             </main>
+            <Footer/>
         </div>
     )
 }

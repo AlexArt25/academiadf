@@ -1,6 +1,7 @@
 import React from 'react'
 import "./MasInformacion.css";
 import MenuHeader from '../components/MenuHeader';
+import Footer from '../components/Footer';
 import { useLocation} from 'react-router';
 import { useState } from 'react';
 const MasInformacion = () => {
@@ -137,6 +138,7 @@ return (
             </form>
         </div>
     </main>
+    <Footer/>
 </div>
 )
 }

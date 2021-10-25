@@ -1,6 +1,7 @@
 import React from 'react';
 import "./Formacion.css";
 import MenuHeader from '../components/MenuHeader.jsx';
+import Footer from '../components/Footer';
 import { useState, useEffect } from 'react';
 // import { FaMapMarkedAlt } from "react-icons/fa";
 // import { FaClock } from 'react-icons/fa';
@@ -259,6 +260,7 @@ const meInteresa = (curso) =>{
                             {mostrarCursos()}
                     </div>
                 </main>
+                <Footer/>
             </div>
      )
     };           
